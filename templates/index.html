@@ -47,7 +47,7 @@
         right: 0;
         position: absolute;
         z-index: -1;
-        opacity: 0.9;
+        opacity: 0.8;
     }
     
     h1 {
@@ -116,7 +116,7 @@
 
     <div class="container">
         <h1>Market Basket Analysis Parameters</h1>
-        <h2 style="text-align: center;">Apply the Apriori Algorithm on Groceries Dataset</h2>
+        <h2 style="text-align: center;">Apply the Apriori Algorithm on Groceries Dataset </h2>
         <div class="container2">
             <form action="/update_parameters" method="POST">
                 <input type="text" id="min_support" name="min_support" placeholder="Minimum Support">
@@ -125,6 +125,9 @@
                 <input type="text" id="min_length" name="min_length" placeholder="Minimum Length">
                 <input class="btn" type="submit" value="Apply Parameters">
                 <p>Apply Apriori on this data by changing the Parameters. This data is contain 10000 rows. Check github acount and Download the Full project</p>
+                <a style="margin: 20px 0;" href="https://github.com/marwanedev/Market-Basket-Analysis-Parameters">Github Project</a>
+                <p>Or in</p>
+                <a style="margin: 10px 0;" href="marwanedata.com">MarwaneData.com</a>
             </form>
             <table id="customers">
                 <thead>
