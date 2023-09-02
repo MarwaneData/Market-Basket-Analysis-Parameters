@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Basket Analysis Parameters</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+    
+    .container {
+        max-width: 92%;
+        margin: 0 auto;
+    }
+    
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 20px 0;
+        margin: 20px 0 0 0;
+        flex-wrap: wrap;
+    }
+    
+    body {
+        background: url('../static/background.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+    
+    body::after {
+        background-color: black;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.9;
+    }
+    
+    h1 {
+        text-align: center;
+        padding: 50px 0;
+        color: white;
+    }
+    
+    form {
+        max-width: 400px;
+        margin: 0 auto 0;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px 15px;
+        margin: 0 0 15px;
+        color: white;
+        background: transparent;
+        border: 1px solid white;
+    }
+    
+    .btn {
+        background: white;
+        color: black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 700;
+        width: 430px;
+        padding: 10px 15px;
+        border: 1px solid white;
+    }
+    
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+    }
+    
+    #customers td,
+    #customers th {
+        border: 1px solid #ffffff;
+        padding: 8px;
+    }
+    
+    #customers tr:nth-child(even) {
+        background-color: black;
+    }
+    
+    #customers tr:hover {
+        background-color: #363636;
+    }
+    
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+
+
+
+    <div class="container">
+        <h1>Market Basket Analysis Parameters</h1>
+        <h2 style="text-align: center;">Apply the Apriori Algorithm on Groceries Dataset</h2>
+        <div class="container2">
+            <form action="/update_parameters" method="POST">
+                <input type="text" id="min_support" name="min_support" placeholder="Minimum Support">
+                <input type="text" id="min_confidence" name="min_confidence" placeholder="Minimum Confidence">
+                <input type="text" id="min_lift" name="min_lift" placeholder="Minimum Lift">
+                <input type="text" id="min_length" name="min_length" placeholder="Minimum Length">
+                <input class="btn" type="submit" value="Apply Parameters">
+                <p>Apply Apriori on this data by changing the Parameters. This data is contain 10000 rows. Check github acount and Download the Full project</p>
+            </form>
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th>Transaction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, row in sample_data.iterrows() %}
+                    <tr>
+                        <td>{{ row['Transactions'] }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td> ... </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
