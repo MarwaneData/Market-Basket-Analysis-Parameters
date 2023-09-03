@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
-import pandas as pd
 from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
 
